@@ -37,6 +37,15 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void _resetQuiz()
+  {
+    print('void has callback');
+    setState(() {
+        _questionIndex = 0;
+         _totalScore = 0;
+    });
+  }
+
   var question = [
     {
       'question': 'what ur name',
@@ -59,7 +68,7 @@ class _MyAppState extends State<MyApp> {
                   questions: question,
                   answerQuestion: _answerQuestion,
                   questionIndex: _questionIndex)
-              : Result(_totalScore)),
+              : Result(_totalScore, _resetQuiz)),
     );
   }
 }
